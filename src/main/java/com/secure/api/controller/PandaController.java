@@ -1,5 +1,6 @@
-package com.secure.api.token.auth.server;
+package com.secure.api.controller;
 
+import com.secure.api.dto.Panda;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

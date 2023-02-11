@@ -1,4 +1,4 @@
-package com.secure.api.token.auth.server;
+package com.secure.api.controller;
 
 import org.junit.jupiter.api.Test;
 

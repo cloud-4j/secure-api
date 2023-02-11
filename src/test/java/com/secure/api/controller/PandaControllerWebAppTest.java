@@ -1,4 +1,4 @@
-package com.secure.api.token.auth.server;
+package com.secure.api.controller;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -14,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 /*
-Doesn't start the server, but only test below layer
+Doesn't start the server, but only test the layer below it
  */
 @SpringBootTest
 @AutoConfigureMockMvc
