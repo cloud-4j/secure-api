@@ -28,7 +28,6 @@ public abstract class JwtUtil {
 
     private static final String SECRET = "FBA898697394CDBC534E7ED86A97AA59F627FE6B309E0A21EEC6C9B130E0369C";
 
-
     public static String createAccessToken(String username, String issuer, List<String> roles) {
         try {
             JWTClaimsSet claims = new JWTClaimsSet.Builder()
@@ -40,10 +39,7 @@ public abstract class JwtUtil {
                     .build();
 
             Payload payload = new Payload(claims.toJSONObject());
-
-            JWSObject jwsObject = new JWSObject(new JWSHeader(JWSAlgorithm.HS256),
-                    payload);
-
+            JWSObject jwsObject = new JWSObject(new JWSHeader(JWSAlgorithm.HS256), payload);
             jwsObject.sign(new MACSigner(SECRET));
             return jwsObject.serialize();
         }
@@ -60,10 +56,7 @@ public abstract class JwtUtil {
                     .build();
 
             Payload payload = new Payload(claims.toJSONObject());
-
-            JWSObject jwsObject = new JWSObject(new JWSHeader(JWSAlgorithm.HS256),
-                    payload);
-
+            JWSObject jwsObject = new JWSObject(new JWSHeader(JWSAlgorithm.HS256), payload);
             jwsObject.sign(new MACSigner(SECRET));
             return jwsObject.serialize();
         }
@@ -72,8 +65,8 @@ public abstract class JwtUtil {
         }
     }
 
-    public static UsernamePasswordAuthenticationToken parseToken(String token) throws JOSEException, ParseException,
-            BadJOSEException {
+    public static UsernamePasswordAuthenticationToken parseToken(String token)
+            throws JOSEException, ParseException, BadJOSEException {
 
         byte[] secretKey = SECRET.getBytes();
         SignedJWT signedJWT = SignedJWT.parse(token);
