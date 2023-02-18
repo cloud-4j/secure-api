@@ -5,7 +5,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>sample1</module>
-    </modules>
+		<module>alibou</module>
+		<module>spring-orig-sample</module>
+	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
